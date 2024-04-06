@@ -5,8 +5,10 @@ const dotenv = require("dotenv");
 const product = require("./routes/productRoute")
 const connectDatabase = require("./config/database")
 const errorMiddlerware = require("./middleware/error")
+const user = require("./routes/userRoutes")
+const order = require("./routes/orderRoute")
 
-
+const cookieParser = require("cookie-parser")
 //Uncaught Error Handling
 process.on("uncaughtException",(err) =>{
     console.log(`Error : ${err.message}`);
@@ -23,11 +25,14 @@ connectDatabase();
 
 //middlewares
 app.use(express.json());
+app.use(cookieParser())
 app.use(errorMiddlerware)
 
 
 // routes
 app.use("/api/v1",product);
+app.use("/api/v1",user);
+app.use("/api/v1",order)
 
 
 app.get("/",(req,res)=>{

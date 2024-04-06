@@ -31,7 +31,7 @@ const mongoose = require("mongoose")
         required:[true,"Please Enter Product Price"],
         maxLength:[8,"Price cannnot exceed 8 character"]
     },
-    rating:{
+    ratings:{
         type:Number,
         default:0
     },
@@ -64,6 +64,11 @@ const mongoose = require("mongoose")
     },
     reviews:[
         {
+            user:{
+                type:mongoose.Schema.ObjectId,
+                ref:"User",
+                required:true
+            },
             name:{
                 type:String,
                 required:true
@@ -78,6 +83,11 @@ const mongoose = require("mongoose")
             }
         }
     ],
+    user:{
+        type:mongoose.Schema.ObjectId,
+        ref:"User",
+        required:true
+    },
     createdAt:{
         type:Date,
         default:Date.now()
