@@ -10,7 +10,7 @@ export const Header = () => {
 
         let Links = [
             {name:"HOME",link:"/"},
-            {name:"Product",link:"/product"},
+            {name:"Product",link:"/products"},
             {name:"Contact",link:"/contact"},
             {name:"About",link:"/about"},
         ]
@@ -18,7 +18,7 @@ export const Header = () => {
         let [open , setOpen] = useState(false)
   return (
 // 
-    <div className='shadow-md bg-white w-full fixed top-0 left-0'>
+    <div className='shadow-md bg-white w-screen fixed top-0 left-0 z-50'>
         <div className="md:flex items-center justify-between md:px-10 py-4 px-7 font-semibold">
             <div className='flex justify-center items-center'>
                 <div className='text-2xl'><BiLogoEdge /></div>
@@ -57,3 +57,63 @@ export const Header = () => {
     </div>
   )
 }
+
+// import React, { useState } from "react";
+// import { NavLink } from "react-router-dom";
+// import { IoClose, IoMenu } from "react-icons/io5";
+// // import "./Navbar.css";
+
+// export const Header = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   const toggleMenu = () => {
+//     setIsOpen(!isOpen);
+//   };
+
+//   return (
+//     <nav className="flex items-center justify-between p-4 bg-white shadow-md">
+//       <NavLink to="/" className="text-gray-800 font-bold text-xl">
+//         My App
+//       </NavLink>
+
+//       <ul className="hidden md:flex items-center space-x-4">
+//         <li>
+//           <NavLink to="/about" className="text-gray-800 hover:text-gray-600">
+//             About
+//           </NavLink>
+//         </li>
+//         <li>
+//           <NavLink to="/contact" className="text-gray-800 hover:text-gray-600">
+//             Contact
+//           </NavLink>
+//         </li>
+//       </ul>
+
+//       <button
+//         className="md:hidden text-gray-800 hover:text-gray-600"
+//         onClick={toggleMenu}
+//       >
+//         {isOpen ? <IoClose /> : <IoMenu />}
+//       </button>
+
+//       <ul
+//         className={`md:hidden absolute top-0 left-0 right-0 bottom-0 bg-white flex flex-col items-center justify-center ${
+//           isOpen ? "block" : "hidden"
+//         }`}
+//       >
+//         <li>
+//           <NavLink to="/about" className="text-gray-800 hover:text-gray-600">
+//             About
+//           </NavLink>
+//         </li>
+//         <li>
+//           <NavLink to="/contact" className="text-gray-800 hover:text-gray-600">
+//             Contact
+//           </NavLink>
+//         </li>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// export default Header;

@@ -4,6 +4,7 @@ import { FaApple } from "react-icons/fa";
 
 export const Footer = () => {
   return (
+    <div className='w-screen overflow-x-hidden'>
     <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 
     md:flex  items-center justify-evenly px-5 py-10 w-screen  text-white  mb-0">
         <div className='flex flex-col
@@ -27,7 +28,7 @@ export const Footer = () => {
             </div>
         </div>
         <div className='md:w-1/3 flex flex-col items-center justify-center gap-11 '>
-            <h1 className='text-4xl font-bold text-pink-800 '>E-COMMERCE</h1>
+            <h1 className='text-4xl font-bold text-pink-800 mt-4'>E-COMMERCE</h1>
             <p>High Quality is our first priority</p>
             <p className='underline'>Copyright 2024 @krishnaMahto</p>
         </div>
@@ -38,6 +39,7 @@ export const Footer = () => {
             <p>Youtube</p>
             <p>Linked In</p>
         </div>
+    </div>
     </div>
   )
 }
